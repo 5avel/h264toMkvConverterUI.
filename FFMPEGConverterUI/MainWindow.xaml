@@ -1,0 +1,56 @@
+﻿<Window x:Class="FFMPEGConverterUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FFMPEGConverterUI"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="400" MinWidth="550" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="256*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="196*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Исходный каталог:" Grid.Column="0" />
+            <TextBox x:Name="tbInFolder" Grid.Column="1" Margin="5" ></TextBox>
+            <Button x:Name="inBtnOpen" Content="..." Margin="5" Click="inBtnOpen_Click" Grid.Column="2"></Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="196*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Целевой каталог:" Grid.Column="0" />
+            <TextBox x:Name="tbOutFolder" Grid.Column="1" Margin="5" ></TextBox>
+            <Button x:Name="outBtnOpen" Content="..." Margin="5"  Grid.Column="2" Click="outBtnOpen_Click"></Button>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox x:Name="cbRepair" Content="Восстонавливать поврежденные выйлы" Grid.Column="0" VerticalAlignment="Center" Margin="5 0 0 0"/>
+            <Button x:Name="BtnStart" Content="Start" Margin="5"  Grid.Column="1" Click="BtnStart_Click"></Button>
+            <ProgressBar x:Name="pbProgres" Grid.Column="2" Margin="5"></ProgressBar>
+            
+        </Grid>
+
+        <TextBox Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="tbConsole" 
+                    TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Margin="5" AcceptsReturn="True"/>
+
+    </Grid>
+</Window>

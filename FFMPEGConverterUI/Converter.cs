@@ -36,8 +36,8 @@ namespace FFMPEGConverterUI
         {
             if (repair)
             {
-                m_ffmpegProcess.StartInfo.Arguments = @" -f h264 -r 12 -y -i " + InFolderPath + "\\" + fileName
-                + @" -vcodec libx264 -preset ultrafast -acodec copy "+OutFolderPath+"\\" + fileName + ".mkv"; // параметры конвертации
+                m_ffmpegProcess.StartInfo.Arguments = @" -r 12 -y -i " + InFolderPath + "\\" + fileName
+                + @" -vcodec mpeg4 -acodec copy " + OutFolderPath+"\\" + fileName + ".mkv"; // параметры конвертации  -preset ultrafast
             }
             else
             {
